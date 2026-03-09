@@ -1,0 +1,7 @@
+{
+    "files.watcherExclude": {
+        "src/*/obj/**": true,
+        "src/*/bin/**": true,
+        "src/*/core": true
+    }
+}

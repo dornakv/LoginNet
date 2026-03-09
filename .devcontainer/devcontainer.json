@@ -1,0 +1,33 @@
+{
+	"name": "LoginNet Dev Container",
+	"build": {
+		"dockerfile": "../docker/Dockerfile.dev",
+		"context": ".."
+	},
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	
+	// Load environment variables from docker/.env for automatic configuration
+	"runArgs": [
+    "--env-file", "${localWorkspaceFolder}/docker/.env",
+  	],
+	
+	"containerEnv": {
+		"ASPNETCORE_ENVIRONMENT": "Development",
+    	"ASPNETCORE_HTTP_PORTS": "5080"
+	},
+	
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-dotnettools.csharp",
+				"ms-dotnettools.csdevkit"
+			]
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [5080],
+
+	// Run container as root to avoid permission issues with named volumes
+	"remoteUser": "root"
+}

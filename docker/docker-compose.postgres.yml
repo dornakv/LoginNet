@@ -1,0 +1,25 @@
+# Automatically loads docker/.env for POSTGRES_PASSWORD
+# Run from project root: docker-compose -f docker/docker-compose.postgres.yml up -d
+services:
+  postgresdb:
+    image: postgres:16-alpine
+    container_name: loginnet-postgres
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=loginnetdb
+      - POSTGRES_USER=loginnetuser
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U loginnetuser -d loginnetdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

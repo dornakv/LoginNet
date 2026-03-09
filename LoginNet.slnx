@@ -1,0 +1,8 @@
+<Solution>
+    <Project Path="src/LoginNet.Application/LoginNet.Application.csproj" />
+    <Project Path="src/LoginNet.Contracts/LoginNet.Contracts.csproj" />
+    <Project Path="src/LoginNet.Domain/LoginNet.Domain.csproj" />
+    <Project Path="src/LoginNet.Infrastructure/LoginNet.Infrastructure.csproj" />
+    <Project Path="src/LoginNet.Tests/LoginNet.Tests.csproj" />
+    <Project Path="src/LoginNet.WebApi/LoginNet.WebApi.csproj" />
+</Solution>

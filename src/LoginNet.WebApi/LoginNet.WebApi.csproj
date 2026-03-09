@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>3c5650da-207b-49f6-9fff-fc407d6d6af0</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LoginNet.Infrastructure\LoginNet.Infrastructure.csproj" />
+    <ProjectReference Include="..\LoginNet.Application\LoginNet.Application.csproj" />
+    <ProjectReference Include="..\LoginNet.Domain\LoginNet.Domain.csproj" />
+    <ProjectReference Include="..\LoginNet.Contracts\LoginNet.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
